@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周韵 (YUN) - 个人作品集</title>
+    <style>
+        /* 色彩与基础规范 */
+        :root {
+            --bg-color: #F7F8F3; /* 米白背景 */
+            --primary-color: #A8C486; /* 草绿强调色 */
+            --accent-color: #E8E9A1; /* 鹅黄点缀色 */
+            --text-color: #333333; /* 深灰正文 */
+            --text-light: #666666;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* 顶部导航 */
+        header {
+            padding: 40px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        /* 核心首屏区域 */
+        .hero {
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 20px;
+            color: var(--text-light);
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .highlight {
+            background-color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* 装饰图形 */
+        .circle-decor {
+            position: absolute;
+            right: 15%;
+            top: 20%;
+            width: 300px;
+            height: 300px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        /* 运营项目模块 */
+        .operations {
+            padding: 60px 10%;
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            display: inline-block;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .card {
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .skills-tags span {
+            display: inline-block;
+            background-color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--primary-color);
+        }
+
+        /* 摄影作品集画廊 */
+        .gallery {
+            padding: 60px 10%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .grid-item {
+            width: 100%;
+            height: 350px;
+            background-color: #e0e0e0; /* 照片加载失败时的占位颜色 */
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 10%;
+            background-color: #ffffff;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PortFolio_Yun</div>
+        <div>@2026</div>
+    </header>
+
+    <section class="hero">
+        <div class="circle-decor"></div>
+        <h1>你好，我是周韵</h1>
+        <h2>懂心理学的独立摄影师 | 数据驱动的用户运营者</h2>
+        <p>拥有应用心理学硕士背景，深刻洞察人心与情绪。具备自媒体账号孵化与商业变现的实战经验，同时也是一名热爱捕捉光影的独立摄影师。熟练运用 <span class="highlight">SPSS、Python、R</span> 进行数据清洗与统计分析，致力于将理性的数据逻辑与感性的视觉美学完美结合。</p>
+    </section>
+
+    <section class="operations">
+        <h2 class="section-title">运营与实战经历</h2>
+        <div class="card">
+            <h3>独立摄影品牌主理人 & 账号运营 (2020.08 - 2022.12)</h3>
+            <p><strong>• 流量获取与转化：</strong> 从0到1策划并搭建社交媒体矩阵，洞悉平台算法与爆款逻辑，最高积累粉丝量达2000+。成功将公域流量引入私域池，实现高净值转化，累计服务商业拍摄客户100+。</p>
+            <p><strong>• 用户洞察与体验设计：</strong> 运用心理学知识对摄影产品进行市场调研，敏锐捕捉客群的情绪诉求与审美偏好。全链路负责活动方案的策划、组织与执行，并根据客户反馈持续优化服务体验闭环。</p>
+            <div class="skills-tags">
+                <span>用户洞察</span>
+                <span>活动策划</span>
+                <span>数据复盘</span>
+                <span>私域转化</span>
+                <span>复杂数据建模分析</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2 class="section-title">摄影作品集</h2>
+        <p>用镜头记录真实的情绪与故事。请在下方浏览我的精选作品。</p>
+        
+        <div class="grid">
+            <div class="grid-item">
+                <img src="photo1.jpg" alt="摄影作品 1">
+            </div>
+            <div class="grid-item">
+                <img src="photo2.jpg" alt="摄影作品 2">
+            </div>
+            <div class="grid-item">
+                <img src="photo3.jpg" alt="摄影作品 3">
+            </div>
+            <div class="grid-item">
+                <img src="photo4.jpg" alt="摄影作品 4">
+            </div>
+            <div class="grid-item">
+                <img src="photo5.jpg" alt="摄影作品 5">
+            </div>
+            <div class="grid-item">
+                <img src="photo6.jpg" alt="摄影作品 6">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 周韵 (YUN). All rights reserved. | 结合临床思维与艺术审美的复合运营者</p>
+    </footer>
+
+</body>
+</html>
