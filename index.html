@@ -144,29 +144,32 @@
             transform: translateY(-2px);
         }
 
-        /* ========== 装饰图形（跟随鼠标） ========== */
-        .circle-decor {
+        /* ========== 装饰图形（苹果+跟随鼠标） ========== */
+        .apple-decor {
             position: absolute;
-            right: 15%;
-            top: 20%;
-            width: 300px;
-            height: 300px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            opacity: 0.2;
+            right: 12%;
+            top: 15%;
+            width: 280px;
+            height: 280px;
             z-index: -1;
             transition: transform 0.3s ease-out;
+            opacity: 0.85;
+            filter: drop-shadow(0 8px 24px rgba(168, 196, 134, 0.3));
+        }
+
+        .apple-decor:hover {
+            transform: scale(1.05) rotate(5deg);
         }
 
         .circle-decor-small {
             position: absolute;
-            right: 10%;
-            top: 35%;
-            width: 120px;
-            height: 120px;
+            right: 8%;
+            top: 40%;
+            width: 100px;
+            height: 100px;
             background-color: var(--accent-color);
             border-radius: 50%;
-            opacity: 0.3;
+            opacity: 0.25;
             z-index: -1;
             transition: transform 0.4s ease-out;
         }
@@ -546,7 +549,43 @@
     </header>
 
     <section class="hero">
-        <div class="circle-decor"></div>
+        <!-- SVG苹果装饰 -->
+        <svg class="apple-decor" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="appleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#B8D4A0;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#A8C486;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#8FB86A;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#7BA05B;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#5D8A3C;stop-opacity:1" />
+                </linearGradient>
+                <filter id="appleShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                    <feOffset dx="2" dy="4" result="offsetblur"/>
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.2"/>
+                    </feComponentTransfer>
+                    <feMerge>
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <!-- 苹果主体 -->
+            <path d="M100 180 C60 180, 25 150, 25 110 C25 70, 55 40, 80 35 C90 32, 95 38, 100 45 C105 38, 110 32, 120 35 C145 40, 175 70, 175 110 C175 150, 140 180, 100 180Z"
+                  fill="url(#appleGrad)" filter="url(#appleShadow)"/>
+            <!-- 苹果高光 -->
+            <ellipse cx="70" cy="95" rx="25" ry="35" fill="rgba(255,255,255,0.25)" transform="rotate(-15 70 95)"/>
+            <!-- 苹果凹陷 -->
+            <path d="M92 45 Q100 55, 108 45" fill="none" stroke="#7BA05B" stroke-width="2"/>
+            <!-- 果柄 -->
+            <path d="M100 45 Q98 25, 105 10" fill="none" stroke="#6B5B3D" stroke-width="3" stroke-linecap="round"/>
+            <!-- 叶子 -->
+            <path d="M105 15 Q125 5, 140 15 Q125 20, 105 15Z" fill="url(#leafGrad)"/>
+            <path d="M108 14 Q122 10, 135 15" fill="none" stroke="#5D8A3C" stroke-width="1"/>
+        </svg>
         <div class="circle-decor-small"></div>
 
         <h1 class="fade-in">你好，我是周韵</h1>
@@ -643,8 +682,8 @@
             }, 1800);
         });
 
-        // ==================== Hero光晕Parallax ====================
-        const circleDecor = document.querySelector('.circle-decor');
+        // ==================== Hero苹果Parallax ====================
+        const appleDecor = document.querySelector('.apple-decor');
         const circleDecorSmall = document.querySelector('.circle-decor-small');
         const heroSection = document.querySelector('.hero');
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -655,8 +694,8 @@
                 const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
                 const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
 
-                circleDecor.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
-                circleDecorSmall.style.transform = `translate(${-x * 45}px, ${-y * 45}px)`;
+                if (appleDecor) appleDecor.style.transform = `translate(${x * 25}px, ${y * 25}px)`;
+                if (circleDecorSmall) circleDecorSmall.style.transform = `translate(${-x * 40}px, ${-y * 40}px)`;
             });
         }
 
