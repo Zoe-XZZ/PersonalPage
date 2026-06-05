@@ -30,7 +30,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-size: 28px;
             font-weight: bold;
@@ -127,18 +127,21 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
             margin-top: 30px;
         }
 
         .grid-item {
             width: 100%;
-            height: 350px;
-            background-color: #e0e0e0; /* 照片加载失败时的占位颜色 */
+            aspect-ratio: 3 / 4;
+            background-color: #e0e0e0;
             border-radius: 8px;
             overflow: hidden;
-            position: relative;
+        }
+
+        .grid-item.landscape {
+            aspect-ratio: 4 / 3;
         }
 
         .grid-item img {
@@ -150,6 +153,14 @@
 
         .grid-item img:hover {
             transform: scale(1.05);
+        }
+
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 560px) {
+            .grid { grid-template-columns: 1fr; }
         }
 
         footer {
@@ -170,6 +181,7 @@
 
     <section class="hero">
         <div class="circle-decor"></div>
+
         <h1>你好，我是周韵</h1>
         <h2>懂心理学的独立摄影师 | 数据驱动的用户运营者</h2>
         <p>拥有应用心理学硕士背景，深刻洞察人心与情绪。具备自媒体账号孵化与商业变现的实战经验，同时也是一名热爱捕捉光影的独立摄影师。熟练运用 <span class="highlight">SPSS、Python、R</span> 进行数据清洗与统计分析，致力于将理性的数据逻辑与感性的视觉美学完美结合。</p>
@@ -194,26 +206,49 @@
     <section class="gallery">
         <h2 class="section-title">摄影作品集</h2>
         <p>用镜头记录真实的情绪与故事。请在下方浏览我的精选作品。</p>
-        
+
         <div class="grid">
-            <div class="grid-item">
-                <img src="photo1.jpg" alt="摄影作品 1">
-            </div>
-            <div class="grid-item">
-                <img src="photo2.jpg" alt="摄影作品 2">
-            </div>
-            <div class="grid-item">
-                <img src="photo3.jpg" alt="摄影作品 3">
-            </div>
-            <div class="grid-item">
-                <img src="photo4.jpg" alt="摄影作品 4">
-            </div>
-            <div class="grid-item">
-                <img src="photo5.jpg" alt="摄影作品 5">
-            </div>
-            <div class="grid-item">
-                <img src="photo6.jpg" alt="摄影作品 6">
-            </div>
+            <!-- 竖图 (3:4) -->
+            <div class="grid-item"><img src="img/photo1.jpg" alt="摄影作品 1"></div>
+            <div class="grid-item"><img src="img/photo2.jpg" alt="摄影作品 2"></div>
+            <div class="grid-item"><img src="img/photo3.jpg" alt="摄影作品 3"></div>
+            <div class="grid-item"><img src="img/photo4.jpg" alt="摄影作品 4"></div>
+            <div class="grid-item"><img src="img/photo5.jpg" alt="摄影作品 5"></div>
+            <div class="grid-item"><img src="img/photo6.jpg" alt="摄影作品 6"></div>
+            <div class="grid-item"><img src="img/photo8.jpg" alt="摄影作品 8"></div>
+            <div class="grid-item"><img src="img/photo9.jpg" alt="摄影作品 9"></div>
+            <div class="grid-item"><img src="img/photo10.jpg" alt="摄影作品 10"></div>
+            <div class="grid-item"><img src="img/photo11.jpg" alt="摄影作品 11"></div>
+            <div class="grid-item"><img src="img/photo12.jpg" alt="摄影作品 12"></div>
+            <div class="grid-item"><img src="img/photo13.jpg" alt="摄影作品 13"></div>
+            <div class="grid-item"><img src="img/photo14.jpg" alt="摄影作品 14"></div>
+            <div class="grid-item"><img src="img/photo15.jpg" alt="摄影作品 15"></div>
+            <div class="grid-item"><img src="img/photo16.jpg" alt="摄影作品 16"></div>
+            <div class="grid-item"><img src="img/photo17.jpg" alt="摄影作品 17"></div>
+            <div class="grid-item"><img src="img/photo18.jpg" alt="摄影作品 18"></div>
+            <div class="grid-item"><img src="img/photo21.jpg" alt="摄影作品 21"></div>
+            <div class="grid-item"><img src="img/photo22.jpg" alt="摄影作品 22"></div>
+            <div class="grid-item"><img src="img/photo23.jpg" alt="摄影作品 23"></div>
+            <div class="grid-item"><img src="img/photo24.jpg" alt="摄影作品 24"></div>
+            <div class="grid-item"><img src="img/photo25.jpg" alt="摄影作品 25"></div>
+            <div class="grid-item"><img src="img/photo26.jpg" alt="摄影作品 26"></div>
+            <div class="grid-item"><img src="img/photo27.jpg" alt="摄影作品 27"></div>
+            <div class="grid-item"><img src="img/photo28.jpg" alt="摄影作品 28"></div>
+            <div class="grid-item"><img src="img/photo31.jpg" alt="摄影作品 31"></div>
+            <div class="grid-item"><img src="img/photo32.jpg" alt="摄影作品 32"></div>
+            <div class="grid-item"><img src="img/photo33.jpg" alt="摄影作品 33"></div>
+            <div class="grid-item"><img src="img/photo34.jpg" alt="摄影作品 34"></div>
+            <div class="grid-item"><img src="img/photo37.jpg" alt="摄影作品 37"></div>
+            <div class="grid-item"><img src="img/photo38.jpg" alt="摄影作品 38"></div>
+            <div class="grid-item"><img src="img/photo40.jpg" alt="摄影作品 40"></div>
+            <div class="grid-item"><img src="img/photo41.jpg" alt="摄影作品 41"></div>
+            <!-- 横图 (4:3) 放最后 -->
+            <div class="grid-item landscape"><img src="img/photo7.jpg" alt="摄影作品 7"></div>
+            <div class="grid-item landscape"><img src="img/photo19.jpg" alt="摄影作品 19"></div>
+            <div class="grid-item landscape"><img src="img/photo20.jpg" alt="摄影作品 20"></div>
+            <div class="grid-item landscape"><img src="img/photo36.jpg" alt="摄影作品 36"></div>
+            <div class="grid-item landscape"><img src="img/photo43.jpg" alt="摄影作品 43"></div>
+            <div class="grid-item landscape"><img src="img/photo44.jpg" alt="摄影作品 44"></div>
         </div>
     </section>
 
