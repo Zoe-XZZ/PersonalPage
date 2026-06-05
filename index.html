@@ -905,20 +905,17 @@
 
         /* AI协作流程 */
         .ai-flow {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
         }
 
         .ai-step {
             background: #fff;
-            padding: 20px;
+            padding: 24px 20px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: center;
-            width: 180px;
             transition: transform 0.3s ease;
         }
 
@@ -953,13 +950,6 @@
             line-height: 1.5;
         }
 
-        .ai-arrow {
-            font-size: 20px;
-            color: var(--primary-color);
-            font-weight: bold;
-            padding-top: 28px;
-        }
-
         /* 响应式适配 */
         @media (max-width: 900px) {
             .emotion-grid {
@@ -968,13 +958,14 @@
         }
 
         @media (max-width: 768px) {
-            .strategy-flow,
-            .ai-flow {
+            .strategy-flow {
                 flex-direction: column;
             }
-            .flow-arrow,
-            .ai-arrow {
+            .flow-arrow {
                 transform: rotate(90deg);
+            }
+            .ai-flow {
+                grid-template-columns: repeat(2, 1fr);
             }
             .emotion-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -991,8 +982,8 @@
             .emotion-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .ai-step {
-                width: 100%;
+            .ai-flow {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1277,19 +1268,16 @@
                     <div class="ai-label">拆解</div>
                     <div class="ai-desc">刷到爆款 → 复制开头 + 提取核心要点</div>
                 </div>
-                <div class="ai-arrow">→</div>
                 <div class="ai-step">
                     <div class="ai-num">2</div>
                     <div class="ai-label">投喂</div>
                     <div class="ai-desc">输入AI："替换案例，保留结构，面向目标人群重写"</div>
                 </div>
-                <div class="ai-arrow">→</div>
                 <div class="ai-step">
                     <div class="ai-num">3</div>
                     <div class="ai-label">筛选</div>
                     <div class="ai-desc">从AI产出中选2-3个较好版本</div>
                 </div>
-                <div class="ai-arrow">→</div>
                 <div class="ai-step">
                     <div class="ai-num">4</div>
                     <div class="ai-label">人化</div>
