@@ -629,11 +629,14 @@
         const LOAD_TIMEOUT = 5000;
 
         // ==================== 页面加载动画 ====================
-        window.addEventListener('load', () => {
+        // 使用DOMContentLoaded而不是load，这样不会等待图片加载
+        document.addEventListener('DOMContentLoaded', () => {
             const loader = document.querySelector('.page-loader');
+
+            // 1.8秒后隐藏加载动画，显示页面内容
             setTimeout(() => {
                 loader.classList.add('hidden');
-                // 加载完成后触发首屏动画
+                // 触发首屏动画
                 document.querySelectorAll('.hero .fade-in').forEach((el, i) => {
                     setTimeout(() => el.classList.add('visible'), i * 150);
                 });
@@ -830,9 +833,8 @@
         });
 
         // ==================== 初始化 ====================
-        document.addEventListener('DOMContentLoaded', () => {
-            initImageLoader();
-        });
+        // 立即初始化图片加载器，不等待任何事件
+        initImageLoader();
     </script>
 
 </body>
