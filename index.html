@@ -14,6 +14,14 @@
             --text-light: #666666;
         }
 
+        /* 图片加载失败时的占位样式 */
+        .grid-item img.error-placeholder {
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -255,6 +263,68 @@
     <footer>
         <p>© 2026 周韵 (YUN). All rights reserved. | 结合临床思维与艺术审美的复合运营者</p>
     </footer>
+
+    <script>
+        // 腾讯云COS基础URL（中国大陆加速节点）
+        const COS_BASE_URL = 'https://myblog-1326618100.cos.ap-guangzhou.myqcloud.com/PersonalPage';
+
+        // 图片加载超时时间（毫秒）
+        const LOAD_TIMEOUT = 5000;
+
+        /**
+         * 智能图片加载器
+         * 优先从GitHub（本地相对路径）加载，超时或失败则fallback到腾讯云COS
+         */
+        function initImageLoader() {
+            const images = document.querySelectorAll('.grid-item img');
+
+            images.forEach(img => {
+                // 保存原始src（GitHub路径）
+                const githubSrc = img.getAttribute('src');
+
+                // 从GitHub路径提取文件名（如 img/photo1.jpg -> photo1.jpg）
+                const filename = githubSrc.split('/').pop();
+
+                // 构建COS fallback URL
+                const cosSrc = `${COS_BASE_URL}/img/${filename}`;
+
+                // 标记正在加载
+                img.dataset.loading = 'github';
+
+                // 设置超时检测
+                const timeoutId = setTimeout(() => {
+                    if (img.dataset.loading === 'github' && !img.complete) {
+                        // 超时，切换到COS
+                        console.log(`[Fallback] 图片加载超时，切换到COS: ${filename}`);
+                        img.dataset.loading = 'cos';
+                        img.src = cosSrc;
+                    }
+                }, LOAD_TIMEOUT);
+
+                // 监听加载成功
+                img.addEventListener('load', function onLoad() {
+                    clearTimeout(timeoutId);
+                    img.removeEventListener('load', onLoad);
+                    img.dataset.loading = 'done';
+                });
+
+                // 监听加载失败（直接切换到COS）
+                img.addEventListener('error', function onError() {
+                    clearTimeout(timeoutId);
+                    img.removeEventListener('error', onError);
+
+                    if (img.dataset.loading !== 'cos') {
+                        console.log(`[Fallback] GitHub加载失败，切换到COS: ${filename}`);
+                        img.dataset.loading = 'cos';
+                        img.src = cosSrc;
+                    }
+                });
+            });
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initImageLoader);
+    </script>
 
 </body>
 </html>
