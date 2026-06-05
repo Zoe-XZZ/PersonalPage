@@ -548,69 +548,42 @@
     </header>
 
     <section class="hero">
-        <!-- SVG苹果装饰 - 扁平插画风格 -->
-        <svg class="apple-decor" viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg">
+        <!-- SVG苹果装饰 - 简约插画风格 -->
+        <svg class="apple-decor" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
             <defs>
-                <!-- 苹果主体渐变 -->
-                <linearGradient id="appleBody" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#C8E6A8;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#A8D486;stop-opacity:1" />
+                <linearGradient id="appleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#D4E8BC"/>
+                    <stop offset="100%" stop-color="#B8D9A0"/>
                 </linearGradient>
-                <!-- 叶子渐变 -->
-                <linearGradient id="leafColor" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#8BC068;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#6FA84E;stop-opacity:1" />
-                </linearGradient>
-                <!-- 手绘质感滤镜 -->
-                <filter id="roughEdge" x="-5%" y="-5%" width="110%" height="110%">
-                    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/>
-                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
-                </filter>
             </defs>
 
-            <!-- 小星星装饰 -->
-            <g fill="#E8E9A1" opacity="0.8">
-                <polygon points="35,45 37,51 43,51 38,55 40,61 35,57 30,61 32,55 27,51 33,51" transform="scale(0.6)"/>
-                <polygon points="180,35 182,41 188,41 183,45 185,51 180,47 175,51 177,45 172,41 178,41" transform="scale(0.5) translate(80,30)"/>
-                <polygon points="200,80 201,83 204,83 202,85 203,88 200,86 197,88 198,85 196,83 199,83" transform="scale(0.4) translate(150,20)"/>
+            <!-- 星星装饰 -->
+            <g fill="#E8E9A1">
+                <path d="M25 50 L27 56 L33 56 L28 60 L30 66 L25 62 L20 66 L22 60 L17 56 L23 56Z"/>
+                <path d="M170 30 L172 35 L177 35 L173 38 L175 43 L170 40 L165 43 L167 38 L163 35 L168 35Z" transform="scale(0.7)"/>
+                <path d="M185 95 L186 98 L189 98 L187 100 L188 103 L185 101 L182 103 L183 100 L181 98 L184 98Z" transform="scale(0.5) translate(100,50)"/>
             </g>
 
-            <!-- 苹果主体 - 扁平插画风格 -->
-            <path d="M120 200
-                     C75 200, 35 165, 35 120
-                     C35 80, 60 50, 90 42
-                     C100 39, 108 42, 115 48
-                     C118 44, 122 44, 125 48
-                     C132 42, 140 39, 150 42
-                     C180 50, 205 80, 205 120
-                     C205 165, 165 200, 120 200Z"
-                  fill="url(#appleBody)" filter="url(#roughEdge)"/>
+            <!-- 苹果主体 -->
+            <path d="M100 190 C55 190, 20 155, 20 110 C20 70, 50 40, 78 35 C88 32, 95 38, 100 48 C105 38, 112 32, 122 35 C150 40, 180 70, 180 110 C180 155, 145 190, 100 190Z"
+                  fill="url(#appleGrad)"/>
 
-            <!-- 苹果内部纹理线条 -->
-            <g stroke="#9AC078" stroke-width="1.5" fill="none" opacity="0.5">
-                <path d="M80 70 Q90 120, 85 170"/>
-                <path d="M110 55 Q115 120, 112 185"/>
-                <path d="M145 55 Q148 120, 145 185"/>
-                <path d="M170 70 Q165 120, 168 170"/>
+            <!-- 苹果内部装饰线 -->
+            <g stroke="#A8CC8A" stroke-width="1.2" fill="none" opacity="0.4">
+                <path d="M65 60 Q70 110, 68 160"/>
+                <path d="M95 48 Q98 110, 96 175"/>
+                <path d="M135 48 Q137 110, 135 175"/>
+                <path d="M155 60 Q152 110, 154 160"/>
             </g>
-
-            <!-- 苹果高光 -->
-            <ellipse cx="85" cy="105" rx="22" ry="30" fill="rgba(255,255,255,0.3)" transform="rotate(-10 85 105)"/>
 
             <!-- 苹果凹陷 -->
-            <path d="M108 50 Q120 62, 132 50" fill="none" stroke="#8BC068" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M90 52 Q100 62, 110 52" fill="none" stroke="#A8CC8A" stroke-width="2" stroke-linecap="round"/>
 
             <!-- 果柄 -->
-            <path d="M120 50 Q118 30, 125 12" fill="none" stroke="#7A6B4D" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M100 52 Q98 32, 104 15" fill="none" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
 
             <!-- 叶子 -->
-            <path d="M125 18 Q148 8, 165 18 Q148 25, 125 18Z" fill="url(#leafColor)"/>
-            <path d="M130 16 Q145 12, 158 17" fill="none" stroke="#6FA84E" stroke-width="1.2"/>
-
-            <!-- 小圆点装饰 -->
-            <circle cx="75" cy="130" r="3" fill="#E8E9A1" opacity="0.6"/>
-            <circle cx="165" cy="125" r="2.5" fill="#E8E9A1" opacity="0.5"/>
-            <circle cx="120" cy="160" r="2" fill="#E8E9A1" opacity="0.4"/>
+            <path d="M104 20 Q125 10, 140 20 Q125 28, 104 20Z" fill="#8BC068"/>
         </svg>
         <div class="circle-decor-small"></div>
 
