@@ -511,13 +511,168 @@
             background-color: var(--bg-color);
         }
 
+        .strategy-desc {
+            max-width: 700px;
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        /* 大板块分区 */
+        .strategy-section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(168,196,134,0.2);
+        }
+
+        .strategy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .strategy-section-title {
+            font-size: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .strategy-quote {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+            padding-left: 16px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .strategy-quote strong {
+            color: var(--primary-color);
+        }
+
+        /* 五维情绪卡片 */
+        .emotion-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .emotion-card {
+            background: #fff;
+            padding: 20px 16px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .emotion-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .emotion-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .emotion-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .emotion-desc {
+            font-size: 13px;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .emotion-tip {
+            font-size: 12px;
+            color: var(--text-light);
+            padding-top: 8px;
+            border-top: 1px dashed rgba(168,196,134,0.3);
+        }
+
+        /* 选题漏斗 */
+        .funnel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 16px;
+        }
+
+        .funnel-layer {
+            padding: 16px 24px;
+            text-align: center;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .funnel-layer:hover {
+            transform: scale(1.02);
+        }
+
+        .funnel-l1 {
+            width: 100%;
+            background: var(--primary-color);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .funnel-l2 {
+            width: 75%;
+            background: #8FB86A;
+        }
+
+        .funnel-l3 {
+            width: 50%;
+            background: #6FA84E;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .funnel-label {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .funnel-text {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .funnel-tip {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
         /* 三段式流程图 */
         .strategy-flow {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
+            gap: 16px;
+            margin: 30px 0;
             flex-wrap: wrap;
         }
 
@@ -526,7 +681,7 @@
             align-items: center;
             gap: 12px;
             background: #fff;
-            padding: 20px 24px;
+            padding: 18px 22px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -538,18 +693,18 @@
         }
 
         .flow-icon {
-            font-size: 32px;
+            font-size: 28px;
         }
 
         .flow-content h4 {
             margin: 0 0 4px 0;
             color: var(--primary-color);
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .flow-content p {
             margin: 0 0 6px 0;
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-light);
         }
 
@@ -563,29 +718,29 @@
         }
 
         .flow-arrow {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--primary-color);
             font-weight: bold;
         }
 
-        /* 钩子类型副标题 */
+        /* 副标题 */
         .strategy-subtitle {
-            font-size: 22px;
-            margin: 50px 0 25px;
+            font-size: 18px;
+            margin: 30px 0 16px;
             color: var(--text-color);
         }
 
         /* 钩子卡片网格 */
         .hook-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
         }
 
         .hook-card {
             background: #fff;
-            padding: 24px;
+            padding: 20px;
             border-radius: 12px;
             border-left: 4px solid var(--primary-color);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -598,37 +753,76 @@
         }
 
         .hook-type {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: var(--primary-color);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .hook-formula {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-light);
-            margin-bottom: 12px;
-            padding-bottom: 12px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
             border-bottom: 1px dashed rgba(168, 196, 134, 0.4);
         }
 
         .hook-example {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-color);
             font-style: italic;
             line-height: 1.5;
         }
 
+        /* 结尾钩子卡片 */
+        .ending-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .ending-card {
+            background: #fff;
+            padding: 16px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .ending-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .ending-type {
+            background: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+
+        .ending-example {
+            font-size: 13px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
         /* 提示卡片 */
         .strategy-tips {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .tip-card {
             background: #fff;
-            padding: 28px;
+            padding: 24px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
@@ -639,19 +833,19 @@
         }
 
         .tip-card h4 {
-            margin: 0 0 16px 0;
+            margin: 0 0 14px 0;
             color: var(--primary-color);
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .tip-card ul {
             margin: 0;
-            padding-left: 20px;
-            line-height: 2;
+            padding-left: 18px;
+            line-height: 1.9;
         }
 
         .tip-card li {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-color);
         }
 
@@ -659,16 +853,146 @@
             color: var(--primary-color);
         }
 
+        /* Vlog人设卡片 */
+        .persona-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .persona-card {
+            background: #fff;
+            padding: 24px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .persona-base {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .persona-status {
+            font-size: 15px;
+            color: var(--text-color);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .persona-scene {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .persona-mood {
+            display: inline-block;
+            background: var(--accent-color);
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: var(--text-color);
+        }
+
+        /* AI协作流程 */
+        .ai-flow {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .ai-step {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            width: 180px;
+            transition: transform 0.3s ease;
+        }
+
+        .ai-step:hover {
+            transform: translateY(-4px);
+        }
+
+        .ai-num {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .ai-label {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .ai-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .ai-arrow {
+            font-size: 20px;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding-top: 28px;
+        }
+
         /* 响应式适配 */
+        @media (max-width: 900px) {
+            .emotion-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .strategy-flow {
+            .strategy-flow,
+            .ai-flow {
                 flex-direction: column;
             }
-            .flow-arrow {
+            .flow-arrow,
+            .ai-arrow {
                 transform: rotate(90deg);
+            }
+            .emotion-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             .hook-cards {
                 grid-template-columns: 1fr;
+            }
+            .funnel-l1 { width: 100%; }
+            .funnel-l2 { width: 85%; }
+            .funnel-l3 { width: 70%; }
+        }
+
+        @media (max-width: 480px) {
+            .emotion-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .ai-step {
+                width: 100%;
             }
         }
 
@@ -743,80 +1067,253 @@
     <!-- ========== 小红书运营策略 ========== -->
     <section class="strategy">
         <h2 class="section-title fade-in">小红书运营策略</h2>
-        <p class="fade-in">基于数据洞察的内容方法论，打造高转化笔记。</p>
+        <p class="fade-in strategy-desc">基于平台算法逻辑与用户心理学的内容生产方法论<br>核心逻辑：心理学选题 → 漏斗模型筛流量 → SOP化文案生产 → 差异化人设占位</p>
 
-        <!-- 三段式结构 -->
-        <div class="strategy-flow fade-in">
-            <div class="flow-item">
-                <div class="flow-icon">🎣</div>
-                <div class="flow-content">
-                    <h4>开头钩子</h4>
-                    <p>前3秒 / 前50字</p>
-                    <span class="flow-tag">降低跳出率</span>
+        <!-- ===== 01 认知层：选题心理学 ===== -->
+        <div class="strategy-section fade-in">
+            <h3 class="strategy-section-title"><span class="section-num">01</span> 认知层：选题心理学</h3>
+            <p class="strategy-quote">爆款选题的本质不是信息差，而是<strong>情绪差</strong>。一条爆款内容至少激活 1 个主维度，叠加 1 个副维度。</p>
+
+            <div class="emotion-grid">
+                <div class="emotion-card fade-in" style="transition-delay:0.05s">
+                    <div class="emotion-icon">🔥</div>
+                    <div class="emotion-name">欲</div>
+                    <div class="emotion-desc">渴望成为、渴望拥有</div>
+                    <div class="emotion-tip">展示理想自我/生活方式</div>
+                </div>
+                <div class="emotion-card fade-in" style="transition-delay:0.1s">
+                    <div class="emotion-icon">⚡</div>
+                    <div class="emotion-name">怕</div>
+                    <div class="emotion-desc">恐惧损失、厌恶落后</div>
+                    <div class="emotion-tip">制造危机感与紧迫性</div>
+                </div>
+                <div class="emotion-card fade-in" style="transition-delay:0.15s">
+                    <div class="emotion-icon">❓</div>
+                    <div class="emotion-name">奇</div>
+                    <div class="emotion-desc">认知颠覆、信息缺口</div>
+                    <div class="emotion-tip">反常识观点、造新词</div>
+                </div>
+                <div class="emotion-card fade-in" style="transition-delay:0.2s">
+                    <div class="emotion-icon">💔</div>
+                    <div class="emotion-name">鸣</div>
+                    <div class="emotion-desc">情绪代偿、替用户发声</div>
+                    <div class="emotion-tip">说出想说却说不出口的话</div>
+                </div>
+                <div class="emotion-card fade-in" style="transition-delay:0.25s">
+                    <div class="emotion-icon">✨</div>
+                    <div class="emotion-name">爽</div>
+                    <div class="emotion-desc">情绪释放、道德快感</div>
+                    <div class="emotion-tip">打脸、逆袭、大快人心</div>
                 </div>
             </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-item">
-                <div class="flow-icon">📖</div>
-                <div class="flow-content">
-                    <h4>中断内容</h4>
-                    <p>高密度信息供给</p>
-                    <span class="flow-tag">提升完播率</span>
+
+            <!-- 选题漏斗 -->
+            <div class="funnel fade-in">
+                <div class="funnel-layer funnel-l1">
+                    <div class="funnel-label">Layer 1 · 泛流量</div>
+                    <div class="funnel-text">用普世痛点拉新，让算法读懂你</div>
+                </div>
+                <div class="funnel-layer funnel-l2">
+                    <div class="funnel-label">Layer 2 · 拓圈层</div>
+                    <div class="funnel-text">引入职业/身份标签，建立记忆点</div>
+                </div>
+                <div class="funnel-layer funnel-l3">
+                    <div class="funnel-label">Layer 3 · 强人设</div>
+                    <div class="funnel-text">输出独特观点，建立不可替代性</div>
                 </div>
             </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-item">
-                <div class="flow-icon">💬</div>
-                <div class="flow-content">
-                    <h4>结尾钩子</h4>
-                    <p>引导评论与转化</p>
-                    <span class="flow-tag">驱动互动</span>
+            <p class="funnel-tip fade-in">执行口诀：先用泛流量拉新 → 再用圈层选题筛粉 → 最后用人设选题固粉</p>
+        </div>
+
+        <!-- ===== 02 执行层：文案SOP ===== -->
+        <div class="strategy-section fade-in">
+            <h3 class="strategy-section-title"><span class="section-num">02</span> 执行层：文案SOP工作流</h3>
+
+            <!-- 三段式结构 -->
+            <div class="strategy-flow">
+                <div class="flow-item">
+                    <div class="flow-icon">🎣</div>
+                    <div class="flow-content">
+                        <h4>感性开头</h4>
+                        <p>前3秒 / 前50字</p>
+                        <span class="flow-tag">降低跳出率</span>
+                    </div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item">
+                    <div class="flow-icon">📖</div>
+                    <div class="flow-content">
+                        <h4>理性中段</h4>
+                        <p>高密度信息供给</p>
+                        <span class="flow-tag">提升完播率</span>
+                    </div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item">
+                    <div class="flow-icon">💬</div>
+                    <div class="flow-content">
+                        <h4>行动结尾</h4>
+                        <p>引导评论与转化</p>
+                        <span class="flow-tag">驱动互动</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 钩子类型 -->
+            <h4 class="strategy-subtitle fade-in">开头钩子速查表</h4>
+            <div class="hook-cards">
+                <div class="hook-card fade-in" style="transition-delay:0.05s">
+                    <div class="hook-type">直接痛点</div>
+                    <div class="hook-formula">现象 + 归因 + 刺痛</div>
+                    <div class="hook-example">"别人为什么伤害你？因为你身上有弱者气息。"</div>
+                </div>
+                <div class="hook-card fade-in" style="transition-delay:0.1s">
+                    <div class="hook-type">引发好奇</div>
+                    <div class="hook-formula">反常识结论 / 悬念</div>
+                    <div class="hook-example">"市场验证过爆了的内容，就重复利用。"</div>
+                </div>
+                <div class="hook-card fade-in" style="transition-delay:0.15s">
+                    <div class="hook-type">人群点名</div>
+                    <div class="hook-formula">身份标签 + 利益承诺</div>
+                    <div class="hook-example">"如果你是保研人群，那么你一定要……"</div>
+                </div>
+                <div class="hook-card fade-in" style="transition-delay:0.2s">
+                    <div class="hook-type">借势</div>
+                    <div class="hook-formula">热点/权威 + 个人解读</div>
+                    <div class="hook-example">借平台算法更新、明星事件、行业报告</div>
+                </div>
+                <div class="hook-card fade-in" style="transition-delay:0.25s">
+                    <div class="hook-type">利益前置</div>
+                    <div class="hook-formula">具体收益 + 时间成本</div>
+                    <div class="hook-example">"3分钟学会，让笔记点赞翻3倍。"</div>
+                </div>
+            </div>
+
+            <!-- 结尾钩子 -->
+            <h4 class="strategy-subtitle fade-in">结尾钩子：评论区运营</h4>
+            <p class="fade-in" style="margin-bottom:16px;color:var(--text-light)">数据洞察：评论区互动量通常是点赞收藏数的 <strong>4倍</strong>。结尾的核心不是总结，而是制造争议或留白。</p>
+            <div class="ending-cards">
+                <div class="ending-card fade-in" style="transition-delay:0.05s">
+                    <span class="ending-type">接龙型</span>
+                    <span class="ending-example">"评论区接红运，留下你的2025关键词"</span>
+                </div>
+                <div class="ending-card fade-in" style="transition-delay:0.1s">
+                    <span class="ending-type">求助型</span>
+                    <span class="ending-example">"第3点我纠结了很久，你们怎么看？"</span>
+                </div>
+                <div class="ending-card fade-in" style="transition-delay:0.15s">
+                    <span class="ending-type">反转型</span>
+                    <span class="ending-example">故意留漏洞，让用户在评论区纠正</span>
+                </div>
+                <div class="ending-card fade-in" style="transition-delay:0.2s">
+                    <span class="ending-type">转化型</span>
+                    <span class="ending-example">明确引导行动（收藏、私信、进群）</span>
+                </div>
+            </div>
+
+            <!-- 节奏与表达 -->
+            <div class="strategy-tips">
+                <div class="tip-card fade-in-left">
+                    <h4>⏱ 内容节奏控制</h4>
+                    <ul>
+                        <li>每 <strong>15-20秒</strong> 出现一个新刺激</li>
+                        <li>每隔 <strong>100字</strong> 包含一个爆款元素</li>
+                        <li>爆款 = <strong>故事 + 差异化</strong></li>
+                        <li>生产流程：先写长文 → 标注爆款元素 → 调整密度</li>
+                    </ul>
+                </div>
+                <div class="tip-card fade-in-right">
+                    <h4>✍️ 表达优化原则</h4>
+                    <ul>
+                        <li><strong>短句优先</strong>，降低认知负荷</li>
+                        <li><strong>故事载体</strong>，道理包裹在案例中</li>
+                        <li><strong>视觉断句</strong>，一段不超过3行</li>
+                        <li>口语化 ≠ 不专业</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- 钩子类型卡片 -->
-        <h3 class="strategy-subtitle fade-in">开头钩子速查表</h3>
-        <div class="hook-cards">
-            <div class="hook-card fade-in" style="transition-delay: 0.1s">
-                <div class="hook-type">直接痛点</div>
-                <div class="hook-formula">现象 + 归因 + 刺痛</div>
-                <div class="hook-example">"别人为什么伤害你？因为你身上有弱者气息。"</div>
-            </div>
-            <div class="hook-card fade-in" style="transition-delay: 0.15s">
-                <div class="hook-type">引发好奇</div>
-                <div class="hook-formula">反常识结论 / 悬念</div>
-                <div class="hook-example">"市场验证过爆了的内容，就重复利用。"</div>
-            </div>
-            <div class="hook-card fade-in" style="transition-delay: 0.2s">
-                <div class="hook-type">人群点名</div>
-                <div class="hook-formula">身份标签 + 利益承诺</div>
-                <div class="hook-example">"如果你是保研人群，那么你一定要……"</div>
-            </div>
-            <div class="hook-card fade-in" style="transition-delay: 0.25s">
-                <div class="hook-type">利益前置</div>
-                <div class="hook-formula">具体收益 + 时间成本</div>
-                <div class="hook-example">"3分钟学会，让笔记点赞翻3倍。"</div>
+        <!-- ===== 03 差异层：Vlog人设策略 ===== -->
+        <div class="strategy-section fade-in">
+            <h3 class="strategy-section-title"><span class="section-num">03</span> 差异层：Vlog人设策略</h3>
+            <p class="strategy-quote">Vlog人设不是「我是谁」，而是「我卖什么状态」。爆款Vlog的核心不是展示生活，而是贩卖一种令人向往的<strong>生命状态</strong>。</p>
+
+            <div class="persona-cards">
+                <div class="persona-card fade-in" style="transition-delay:0.05s">
+                    <div class="persona-base">体制内</div>
+                    <div class="persona-status">确定性幸福感</div>
+                    <div class="persona-scene">通勤 · 办公桌 · 食堂</div>
+                    <div class="persona-mood">安稳 · 自洽</div>
+                </div>
+                <div class="persona-card fade-in" style="transition-delay:0.1s">
+                    <div class="persona-base">外企/都市</div>
+                    <div class="persona-status">精致秩序感</div>
+                    <div class="persona-scene">上下班 · 咖啡 · 健身</div>
+                    <div class="persona-mood">高效 · 边界感</div>
+                </div>
+                <div class="persona-card fade-in" style="transition-delay:0.15s">
+                    <div class="persona-base">自由职业</div>
+                    <div class="persona-status">反卷掌控感</div>
+                    <div class="persona-scene">居家办公 · 旅行</div>
+                    <div class="persona-mood">自由 · 自律</div>
+                </div>
+                <div class="persona-card fade-in" style="transition-delay:0.2s">
+                    <div class="persona-base">宝妈/普通人</div>
+                    <div class="persona-status">具体而微的治愈感</div>
+                    <div class="persona-scene">早餐 · 收纳 · 散步</div>
+                    <div class="persona-mood">松弛 · 烟火气</div>
+                </div>
             </div>
         </div>
 
-        <!-- 内容节奏与表达原则 -->
-        <div class="strategy-tips">
-            <div class="tip-card fade-in-left">
-                <h4>⏱ 内容节奏控制</h4>
-                <ul>
-                    <li>每 <strong>15-20秒</strong> 出现一个新刺激</li>
-                    <li>每隔 <strong>100字</strong> 包含一个爆款元素</li>
-                    <li>爆款 = <strong>故事 + 差异化</strong></li>
-                </ul>
+        <!-- ===== 04 附录：AI协作 ===== -->
+        <div class="strategy-section fade-in">
+            <h3 class="strategy-section-title"><span class="section-num">04</span> AI协作与网感剪辑</h3>
+
+            <div class="ai-flow fade-in">
+                <div class="ai-step">
+                    <div class="ai-num">1</div>
+                    <div class="ai-label">拆解</div>
+                    <div class="ai-desc">刷到爆款 → 复制开头 + 提取核心要点</div>
+                </div>
+                <div class="ai-arrow">→</div>
+                <div class="ai-step">
+                    <div class="ai-num">2</div>
+                    <div class="ai-label">投喂</div>
+                    <div class="ai-desc">输入AI："替换案例，保留结构，面向目标人群重写"</div>
+                </div>
+                <div class="ai-arrow">→</div>
+                <div class="ai-step">
+                    <div class="ai-num">3</div>
+                    <div class="ai-label">筛选</div>
+                    <div class="ai-desc">从AI产出中选2-3个较好版本</div>
+                </div>
+                <div class="ai-arrow">→</div>
+                <div class="ai-step">
+                    <div class="ai-num">4</div>
+                    <div class="ai-label">人化</div>
+                    <div class="ai-desc">加入个人故事、案例、口语化表达</div>
+                </div>
             </div>
-            <div class="tip-card fade-in-right">
-                <h4>✍️ 表达优化原则</h4>
-                <ul>
-                    <li><strong>短句优先</strong>，降低认知负荷</li>
-                    <li><strong>故事载体</strong>，道理包裹在案例中</li>
-                    <li><strong>视觉断句</strong>，一段不超过3行</li>
-                </ul>
+
+            <div class="strategy-tips" style="margin-top:30px">
+                <div class="tip-card fade-in-left">
+                    <h4>🎬 网感剪辑要点</h4>
+                    <ul>
+                        <li><strong>人</strong>：出镜状态 > 颜值，真实感 > 精致感</li>
+                        <li><strong>货</strong>：信息密度是核心，每帧都应有信息或情绪价值</li>
+                        <li><strong>场</strong>：场景即标签，固定场景建立用户认知锚点</li>
+                    </ul>
+                </div>
+                <div class="tip-card fade-in-right">
+                    <h4>✂️ 剪辑节奏</h4>
+                    <ul>
+                        <li><strong>开头3秒</strong>：强视觉冲击或强冲突台词</li>
+                        <li><strong>中段</strong>：跳剪/音效/字幕放大信息密度</li>
+                        <li><strong>结尾</strong>：留白或反问引导互动</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
